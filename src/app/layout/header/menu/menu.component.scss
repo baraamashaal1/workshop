@@ -1,0 +1,46 @@
+@import "~sass-rem";
+@import "/src/styling/abstracts";
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+:host{
+  display: block;
+  width: 100%;
+  background-color: $nav-bg-color;
+  height: $nav-height;
+  left: 0;
+  top: $header-height;
+  position: fixed;
+}
+
+nav{
+  height: 100%;
+  padding-bottom: 0;
+  padding-top: 0;
+  a{
+    padding: 0;
+    font-size: rem(18px);
+    line-height: $nav-height;
+  }
+  .nav-item:not(:last-child){
+    @include media-breakpoint-up(md){
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(lg){
+      margin-right: 1rem;
+    }
+    @include media-breakpoint-up(lg){
+      margin-right: 1.75rem;
+    }
+  }
+}
+
+.search,.navbar-toggler{
+  padding:0;
+  color: $primary;
+  height: $nav-height;
+  font-size: rem(50px);
+}
+
+

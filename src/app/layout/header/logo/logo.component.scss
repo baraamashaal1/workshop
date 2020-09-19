@@ -1,0 +1,67 @@
+@import "~sass-rem";
+@import "/src/styling/abstracts";
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+:host {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: block;
+  height: $header-height;
+  background-color: #fff;
+
+  .container-xl {
+  }
+
+  .container-xl, .row {
+    height: 100%;
+  }
+}
+
+.accessibility {
+  margin-top: rem(29px);
+
+  &, .languages button {
+    font-size: rem(12px);
+  }
+
+  .font-sizing {
+    .btn {
+      color: $primary;
+    }
+
+    .font-large {
+      font-size: rem(19px);
+    }
+
+    .font-normal {
+      font-size: rem(13px);
+      margin-top: rem(5.5px);
+    }
+  }
+
+  .authorization {
+    margin-bottom: rem(32px);
+  }
+
+  button {
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    line-height: 1;
+
+    &:not(:last-child) {
+      margin-right: rem(1.5px);
+    }
+
+    &.selected {
+      width: rem(28px);
+      height: rem(22px);
+      border-radius: rem(12px);
+      @include button-variant($primary, $primary)
+    }
+  }
+}
