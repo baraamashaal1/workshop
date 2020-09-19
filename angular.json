@@ -31,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styling/main.scss"
             ],
             "scripts": []
           },
@@ -126,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "workshop"
+    }
+  },
+  "defaultProject": "workshop",
+  "cli": {
+    "analytics": false
+  }
 }

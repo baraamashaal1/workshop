@@ -1,0 +1,27 @@
+//noinspection ALL
+@font-face {
+  font-family: 'Segoe UI';
+  src: local('Segoe UI'), local('SegoeUI'),
+  url('/assets/fonts/SegoeUI.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+//noinspection ALL
+@font-face {
+  font-family: 'Optima';
+  src: local('Optima'), url('/assets/fonts/OPTIMA.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+//noinspection ALL
+@font-face {
+  font-family: 'Calibri';
+  src: local('Calibri'),
+  url('/assets/fonts/Calibri.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

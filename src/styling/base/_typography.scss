@@ -1,0 +1,17 @@
+html{
+  font-size: $rem-baseline;
+}
+ul{
+  &.piped{
+    li{
+      &:not(:last-child):after{
+        content: '|';
+        margin-left: .5rem;
+      }
+    }
+  }
+}
+
+.text-large{
+  font-size: rem(24px);
+}
