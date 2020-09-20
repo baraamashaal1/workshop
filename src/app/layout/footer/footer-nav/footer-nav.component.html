@@ -1,0 +1,25 @@
+<div class="container-xl">
+  <div class="row">
+    <div *ngFor="let col of footerNav; let $last = last;" class="footer-nav-col text-center text-sm-left "
+         [class]="{'col-sm-6': !$last,'col-lg-2': !$last, 'col-lg-4': $last}">
+      <h5 class="footer-nav-title">{{col.title}}</h5>
+      <ul class="list-unstyled footer-nav-items">
+        <li *ngFor="let link of col.links">
+          <a [routerLink]="link.route">{{link.name}}</a>
+        </li>
+        <li *ngIf="$last" class="newsletter">
+          <div class="form-group mb-0">
+            <label class="h5 newsletter-title" for="">Subscribe to our Newsletter</label>
+            <div class="input-group mb-0">
+              <input type="text" class="form-control" placeholder="Enter Your email address"
+                     aria-label="Enter Your email address" aria-describedby="Newsletter">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">Button</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

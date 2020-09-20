@@ -1,21 +1,50 @@
+
 //fonts
 $rem-baseline: 16px;
 $font-size-base: rem($rem-baseline);
+$font-size-lg: $font-size-base * 1.125;
+$font-size-sm: $font-size-base * .875;
+
 
 // colors
 $primary: #008795;
 $secondary: #8DC043;
-//$success: $green;
-//$info: $cyan;
-//$warning: $yellow;
-//$danger: $red;
 $light: #D9D9D9;
 $dark: #4A4A4A;
 
 
 // header
 $header-height: rem(153px);
-$header-bg-color:#fff;
-$nav-height:rem(56px);
-$nav-bg-color: rgba(#F2F0F0,.95);
+$header-bg-color: #fff;
+$nav-height: rem(56px);
+$nav-bg-color: rgba(#F2F0F0, .95);
 
+/// Components
+//
+// Define common padding and border radius sizes and more.
+$border-radius: 0;
+$border-radius-lg: $border-radius;
+$border-radius-sm: $border-radius;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+$input-btn-padding-y: rem(15px);
+$input-btn-padding-x: rem(24px);
+$input-btn-line-height: 1;
+$input-btn-padding-y-sm: .5rem;
+$input-btn-padding-x-sm: .1rem;
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 2rem;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+$btn-line-height-lg: rem(14px);
+
+
+// footer
+$copyrights-height: rem(74px);
+
+@import "~bootstrap/scss/variables";

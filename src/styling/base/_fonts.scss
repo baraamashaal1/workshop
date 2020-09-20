@@ -18,6 +18,13 @@
 
 //noinspection ALL
 @font-face {
+  font-family: 'Optima';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Optima'), url('/assets/fonts/Optima Medium.woff') format('woff');
+}
+//noinspection ALL
+@font-face {
   font-family: 'Calibri';
   src: local('Calibri'),
   url('/assets/fonts/Calibri.woff') format('woff');

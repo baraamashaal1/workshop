@@ -1,8 +1,4 @@
-@import "~sass-rem";
 @import "/src/styling/abstracts";
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
 
 :host {
   width: 100%;
@@ -12,6 +8,7 @@
   display: block;
   height: $header-height;
   background-color: #fff;
+  z-index: $zindex-fixed;
 
   .container-xl {
   }
