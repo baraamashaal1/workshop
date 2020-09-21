@@ -8,16 +8,20 @@
     <div class="col-6">
       <div class="accessibility text-right">
         <ul class="list-inline text-uppercase piped text-primary authorization">
-          <li class="list-inline-item">register</li>
-          <li class="list-inline-item">login</li>
+          <li class="list-inline-item">
+            <a routerLink=".">register</a>
+          </li>
+          <li class="list-inline-item">
+            <a routerLink=".">login</a>
+          </li>
         </ul>
 
         <ul class="list-inline piped">
           <li class="list-inline-item languages">
-            <button class="btn selected">
+            <button (click)="setAppLang('en')" class="btn" [class.selected]="appLang == 'en'">
               en
             </button>
-            <button class="btn">
+            <button (click)="setAppLang('ar')" class="btn" [class.selected]="appLang == 'ar'">
               ar
             </button>
           </li>

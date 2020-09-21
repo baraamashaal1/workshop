@@ -1,1 +1,50 @@
 @import "~bootstrap/scss/mixins";
+
+@mixin success-card($scale-ratio: 1,$card-to-show:2) {
+  $card-width: 457px * $scale-ratio;
+  $card-height: 457px * $scale-ratio;
+  $card-icon-width: 99px * $scale-ratio;
+  $card-icon-height: 99px * $scale-ratio;
+  $card-padding-top: 75px * $scale-ratio;
+  $card-title-top-font-size: 24px * $scale-ratio;
+  $card-title-bottom-font-size: 24px * $scale-ratio;
+  $card-title-top-margin-bottom: 45px * $scale-ratio;
+  $card-big-num-font-size: 55px * $scale-ratio;
+  $card-text-font-size: 18px * $scale-ratio;
+  $cards-gutter: if($card-to-show > 1, 30px, 0);
+
+
+  .success-card {
+    height: rem($card-height);
+    width: rem($card-width);
+    margin-top: rem($card-icon-width/2);
+
+    .card-top-title, .card-bottom-title {
+      font-size: rem($card-title-top-font-size);
+    }
+
+    .card-top-title {
+      margin-bottom: rem($card-title-top-margin-bottom);
+    }
+
+    .big-num {
+      font-size: rem($card-big-num-font-size);
+    }
+
+    .card-text {
+      font-size: rem($card-text-font-size);
+    }
+  }
+  .card-img-overlay {
+    padding-top: rem($card-padding-top);
+
+    .card-icon {
+      height: rem($card-icon-height);
+      width: rem($card-icon-width);
+    }
+  }
+  .swiper-container {
+    margin: 0 auto;
+    width: rem($card-width * $card-to-show + $cards-gutter);
+  }
+}

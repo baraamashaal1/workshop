@@ -1,0 +1,182 @@
+@import "/src/styling/abstracts";
+
+$program-diameter: 269px;
+$program-side-length: 190px;
+$program-gutter: 21px;
+$program-rows-gutter: -55.86px;
+$program-image-margin-top: 25px;
+$program-name-margin-top: 24px;
+$program-name-font-size: 22px;
+$program-action-font-size: 48px;
+
+:host {
+  display: block;
+}
+
+#our-programs {
+  color:$light;
+  &:before {
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(#000, .7);
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  position: relative;
+  background: no-repeat center center scroll;
+  background-size: cover;
+  height: 100%;
+  //min-height: rem(600px);
+  padding: rem(50px) 0 rem(85px);
+  &>*{
+    position: relative;
+  }
+}
+
+.section-header {
+  margin-bottom: rem(45px);
+
+  .title {
+    margin-bottom: rem(17px);
+    font-size: rem(36px);
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-size: rem(24px);
+    line-height: 1;
+  }
+}
+
+
+.program {
+  text-align: center;
+  border: 2px solid #fff;
+  display: inline-block;
+  height: rem($program-side-length);
+  width: rem($program-side-length);
+  margin: rem($program-gutter / 2);
+  transition: all .2s;
+  &:hover{
+    background-color: $primary;
+  }
+  .wrapper{
+    width: 100%;
+    height: 100%;
+    transition: transform .2s;
+  }
+  .program-name{
+    font-family: Calibri;
+    font-size: rem($program-name-font-size);
+    margin: rem($program-name-margin-top) auto 0;
+    line-height: 1;
+  }
+  .program-image{
+    margin-top: rem($program-image-margin-top);
+    max-height: 34%;
+  }
+  .program-action{
+    font-size: rem($program-action-font-size);
+    padding: 0;
+    font-family: Segoe UI;
+    font-weight: 700;
+    line-height: 1;
+  }
+  @include media-breakpoint-up(sm) {
+    $program-side-length: $program-side-length - $program-side-length * 35 / 100;
+    $program-diameter: $program-diameter - $program-diameter * 35 / 100;
+    $program-gutter: $program-gutter - $program-gutter * 35 / 100;
+    height: rem($program-side-length);
+    width: rem($program-side-length);
+    margin: 0 rem($program-gutter / 2) rem($program-gutter / 2);
+    .odd & {
+      $program-rows-gutter: $program-rows-gutter - $program-rows-gutter * 35 / 100;
+      margin-top: rem($program-gutter / 2);
+    }
+    .program-name{
+      $program-name-margin-top: $program-name-margin-top - $program-name-margin-top * 35 / 100;
+      $program-name-font-size: $program-name-font-size - $program-name-font-size * 35 / 100;
+      margin-top: rem($program-name-margin-top);
+      font-size: rem($program-name-font-size);
+    }
+    .program-image{
+      $program-image-margin-top: $program-image-margin-top - $program-image-margin-top * 35 /100;
+      margin-top: rem($program-image-margin-top);
+    }
+    .program-action{
+      $program-action-font-size: $program-action-font-size - $program-action-font-size * 35 / 100;
+      font-size: rem($program-action-font-size);
+    }
+  }
+  @include media-breakpoint-up(md) {
+    $program-side-length: $program-side-length - $program-side-length * 35 / 100;
+    $program-diameter: $program-diameter - $program-diameter * 35 / 100;
+    $program-gutter: $program-gutter - $program-gutter * 35 / 100;
+    transform: rotate(45deg);
+    margin: 0 rem(($program-diameter - $program-side-length) / 2 + ($program-gutter / 2));
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+    .odd & {
+      $program-rows-gutter: $program-rows-gutter - $program-rows-gutter * 35 / 100;
+      margin-top: rem($program-rows-gutter + $program-gutter);
+    }
+    .wrapper{
+      transform: rotate(-45deg);
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    $program-side-length: $program-side-length - $program-side-length * 25 / 100;
+    $program-diameter: $program-diameter - $program-diameter * 25 / 100;
+    $program-gutter: $program-gutter - $program-gutter * 25 / 100;
+
+    height: rem($program-side-length);
+    width: rem($program-side-length);
+    margin: 0 rem(($program-diameter - $program-side-length) / 2 + ($program-gutter / 2));
+    .odd & {
+      $program-rows-gutter: $program-rows-gutter - $program-rows-gutter * 25 / 100;
+      margin-top: rem($program-rows-gutter + $program-gutter);
+    }
+    .program-name{
+      $program-name-margin-top: $program-name-margin-top - $program-name-margin-top * 25 / 100;
+      $program-name-font-size: $program-name-font-size - $program-name-font-size * 25 / 100;
+      margin-top: rem($program-name-margin-top);
+      font-size: rem($program-name-font-size);
+    }
+    .program-image{
+      $program-image-margin-top: $program-image-margin-top - $program-image-margin-top * 25 /100;
+      margin-top: rem($program-image-margin-top);
+    }
+    .program-action{
+      $program-action-font-size: $program-action-font-size - $program-action-font-size * 25 / 100;
+      font-size: rem($program-action-font-size);
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    height: rem($program-side-length);
+    width: rem($program-side-length);
+    margin: 0 rem(($program-diameter - $program-side-length) / 2 + ($program-gutter / 2));
+    .odd & {
+      margin-top: rem($program-rows-gutter + $program-gutter);
+    }
+    .program-name{
+      margin-top: rem($program-name-margin-top);
+      font-size: rem($program-name-font-size);
+    }
+    .program-image{
+      margin-top: rem($program-image-margin-top);
+    }
+    .program-action{
+      font-size: rem($program-action-font-size);
+    }
+  }
+}

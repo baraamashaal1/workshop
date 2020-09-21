@@ -1,0 +1,29 @@
+<section id="press-releases">
+  <div class="container-xl">
+    <div class="section-header">
+      <h4 class="subtitle">Our latest</h4>
+      <h2 class="title">Press Releases</h2>
+    </div>
+    <div class="section-body">
+      <div class="row no-gutters">
+        <div class="col-sm-6 col-md-4 col-xl-3"
+             *ngFor="let article of articles | pressReleases:{showOnHomepage: showOnHomepage,sourceID: category}">
+          <div class="card press-card bg-dark text-white"
+               [style]="{'background-image':'url(\''+ article.urlToImage + '\')'}">
+            <div class="card-img-overlay d-flex flex-column">
+              <h5 class="card-title">
+                <div class="day">{{ article.publishedAt.getDate() }}</div>
+                <div class="month">{{ months[article.publishedAt.getMonth()] }}</div>
+                <div class="year">{{ days[article.publishedAt.getDay()] }} {{ article.publishedAt.getFullYear() }}</div>
+              </h5>
+              <p class="card-text">{{ article.description }}</p>
+              <div class="card-actions">
+                <button type="button" class="btn btn-action">read more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

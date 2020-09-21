@@ -9,7 +9,10 @@
   height: $header-height;
   background-color: #fff;
   z-index: $zindex-fixed;
-
+  transition: top .2s;
+  &.scrolling-down{
+    top: $header-height * -1;
+  }
   .container-xl {
   }
 
@@ -44,20 +47,19 @@
     margin-bottom: rem(32px);
   }
 
-  button {
+  .btn {
     padding: 0;
     margin: 0;
     text-transform: capitalize;
     line-height: 1;
-
+    border-radius: rem(12px);
+    transition: background-color .2s, width .2s, padding .2s, height .2s;
     &:not(:last-child) {
       margin-right: rem(1.5px);
     }
-
     &.selected {
       width: rem(28px);
       height: rem(22px);
-      border-radius: rem(12px);
       @include button-variant($primary, $primary)
     }
   }

@@ -1,0 +1,70 @@
+@import "/src/styling/abstracts/index";
+
+#press-releases {
+  padding: rem(29px) 0 rem(127px);
+}
+
+.section-header {
+  color: $primary;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: rem(32px);
+
+  .title {
+    font-style: rem(36px);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    margin-bottom: rem(17px);
+    font-style: rem(24px);
+  }
+}
+
+.press-card {
+  height: rem(393px);
+  width: 100%;
+  background: no-repeat center center scroll;
+  background-size: cover;
+  transition: background-color .2s;
+  font-family:'Segoe UI';
+  border: 0;
+  //margin-bottom: rem(15px);
+  .card-title{
+    margin-bottom: rem(17.5px);
+  }
+  .card-text{
+    overflow: hidden;
+    max-height: rem(110px);
+    flex-grow: 1;
+  }
+  .day{
+    font-size: rem(60px);
+  }
+  .month{
+    font-size: rem(30px);
+    margin-bottom: rem(10px);
+  }
+  .year{
+    font-size: rem(18px);
+  }
+  .day,.month,.year{
+    line-height: 1;
+  }
+  .btn-action{
+    background-color: #A7A9AC;
+    border: 1px solid #fff;
+    color: white;
+  }
+  .card-img-overlay{
+    background-color: rgba(#000,.5);
+    padding: rem(24px) rem(24px) rem(62px);
+    transition: background-color .2s;
+    &:hover{
+      &,.btn-action{
+        background-color: $secondary;
+      }
+    }
+  }
+}

@@ -9,6 +9,10 @@
   top: $header-height;
   position: fixed;
   z-index: $zindex-fixed;
+  transition: top .2s;
+  &.scrolling-down{
+    top: 0;
+  }
 }
 
 nav{
