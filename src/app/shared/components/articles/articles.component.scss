@@ -1,68 +1,59 @@
 @import "/src/styling/abstracts";
 
-#press-releases {
-  padding: rem(29px) 0 rem(127px);
-}
 
-.section-header {
-  color: $primary;
-  text-align: center;
-  line-height: 1;
-  margin-bottom: rem(32px);
-
-  .title {
-    font-style: rem(36px);
-    font-weight: 500;
-    margin-bottom: 0;
-  }
-
-  .subtitle {
-    margin-bottom: rem(17px);
-    font-style: rem(24px);
-  }
-}
-
-.press-card {
+.article-card {
   height: rem(393px);
   width: 100%;
   background: no-repeat center center scroll;
   background-size: cover;
   transition: background-color .2s;
-  font-family:'Segoe UI';
+  font-family: 'Segoe UI';
   border: 0;
   //margin-bottom: rem(15px);
-  .card-title{
+  &:hover{
+    cursor:pointer;
+  }
+  .card-title {
     margin-bottom: rem(17.5px);
   }
-  .card-text{
+
+  .card-text {
     overflow: hidden;
-    max-height: rem(110px);
+    line-height: 1.4;
     flex-grow: 1;
   }
-  .day{
+
+  .day {
     font-size: rem(60px);
   }
-  .month{
+
+  .month {
     font-size: rem(30px);
     margin-bottom: rem(10px);
   }
-  .year{
+
+  .year {
     font-size: rem(18px);
   }
-  .day,.month,.year{
+
+  .day, .month, .year {
     line-height: 1;
   }
-  .btn-action{
+
+  .btn-action {
     background-color: #A7A9AC;
     border: 1px solid #fff;
     color: white;
+    text-transform: capitalize;
   }
-  .card-img-overlay{
-    background-color: rgba(#000,.5);
-    padding: rem(24px) rem(24px) rem(62px);
+
+  .card-img-overlay {
+    background-color: rgba(#000, .5);
+    padding: rem(12px) rem(16px) rem(52px);
     transition: background-color .2s;
-    &:hover{
-      &,.btn-action{
+
+    &:hover {
+      &, .btn-action {
         background-color: $secondary;
       }
     }

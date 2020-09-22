@@ -3,11 +3,11 @@ import {Articles, PressReleases, SourceCategory} from '../../interfaces/pressRel
 import {SharedService} from '../../services/shared.service';
 
 @Component({
-  selector: 'link-press-releases',
-  templateUrl: './press-releases.component.html',
-  styleUrls: ['./press-releases.component.scss']
+  selector: 'link-articles',
+  templateUrl: './articles.component.html',
+  styleUrls: ['./articles.component.scss']
 })
-export class PressReleasesComponent implements OnInit {
+export class ArticlesComponent implements OnInit {
   public articles: Articles[];
   public categories: SourceCategory[];
   public months = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -16,12 +16,14 @@ export class PressReleasesComponent implements OnInit {
   public days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   @Input() public category: number;
   @Input() public showOnHomepage: boolean;
+  @Input() public showFilters: boolean;
 
   constructor(private sharedService: SharedService) {
     this.category = 0;
-    this.showOnHomepage = true;
+    this.showOnHomepage = false;
     this.articles = [];
     this.categories = [];
+    this.showFilters = true;
   }
 
   ngOnInit(): void {

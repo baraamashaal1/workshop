@@ -1,0 +1,41 @@
+@import "/src/styling/abstracts";
+
+section#news {
+  padding: rem(29px) 0 rem(127px);
+
+  .section-header {
+    color: $primary;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: rem(32px);
+
+    .title {
+      font-style: rem(36px);
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .subtitle {
+      margin-bottom: rem(17px);
+      font-style: rem(24px);
+    }
+  }
+}
+
+.section-header {
+  color: $primary;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: rem(32px);
+
+  .title {
+    font-style: rem(36px);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    margin-bottom: rem(17px);
+    font-style: rem(24px);
+  }
+}

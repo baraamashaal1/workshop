@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import {PressReleasesComponent} from './components/press-releases/press-releases.component';
+import {ArticlesComponent} from './components/articles/articles.component';
 import { PressReleasesPipe } from './pipes/press-releases.pipe';
 import { ShowOnScrollUpDirective } from './directives/show-on-scroll-up.directive';
 
@@ -12,14 +12,14 @@ import { ShowOnScrollUpDirective } from './directives/show-on-scroll-up.directiv
   providers: [
     { provide: 'Window',  useValue: window }
   ],
-  declarations: [PressReleasesComponent, PressReleasesPipe, ShowOnScrollUpDirective],
+  declarations: [ArticlesComponent, PressReleasesPipe, ShowOnScrollUpDirective],
   imports: [
     CommonModule,
     NgbModule,
     RouterModule,
     HttpClientModule
   ],
-    exports: [CommonModule, NgbModule, RouterModule, HttpClientModule, PressReleasesComponent, ShowOnScrollUpDirective]
+    exports: [CommonModule, NgbModule, RouterModule, HttpClientModule, ArticlesComponent, ShowOnScrollUpDirective]
 })
 export class SharedModule {
 }
