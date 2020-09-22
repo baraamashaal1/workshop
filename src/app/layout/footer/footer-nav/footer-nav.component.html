@@ -1,6 +1,6 @@
 <div class="container-xl">
   <div class="row">
-    <div *ngFor="let col of footerNav; let $last = last;" class="footer-nav-col text-center text-sm-left "
+    <div *ngFor="let col of footerNav; let $last = last;" class="footer-nav-col"
          [class]="{'col-sm-6': !$last,'col-lg-2': !$last, 'col-lg-4': $last}">
       <h5 class="footer-nav-title">{{col.title}}</h5>
       <ul class="list-unstyled footer-nav-items">
