@@ -9,7 +9,6 @@ import Swiper from 'swiper';
 export class SuccessStoryComponent implements OnInit, AfterViewInit {
   @ViewChild('swiperContainer')
   swiperContainer!: ElementRef;
-
   constructor() {
   }
 
@@ -17,23 +16,17 @@ export class SuccessStoryComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // xs: 0,
-    // sm: 576px,
-    // md: 768px,
-    // lg: 992px,
-    // xl: 1200px
-    const test = new Swiper(this.swiperContainer.nativeElement, {
+    // xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px
+    const swiper = new Swiper(this.swiperContainer.nativeElement, {
       spaceBetween: 0,
       slidesPerView: 1,
       breakpoints: {
-        // when window width is >= 320px
         768: {
           slidesPerView: 2,
           spaceBetween: 30
         }
       }
     });
-    console.log(test);
   }
 
 }

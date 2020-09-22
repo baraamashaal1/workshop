@@ -1,5 +1,6 @@
 @if $secondary == #8DC043{
   .btn{
+    text-transform: capitalize;
     &.btn-secondary{
       color: $light;
     }

@@ -1,0 +1,13 @@
+<div class="container-xl">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li *ngFor="let link of data;let $last = last" class="breadcrumb-item" [class.active]="$last">
+        <ng-container *ngIf="!$last">
+          <a href="#">{{link}}</a>
+          <i class="fas fa-angle-right"></i>
+        </ng-container>
+        <span class="active" *ngIf="$last">{{link}}</span>
+      </li>
+    </ol>
+  </nav>
+</div>

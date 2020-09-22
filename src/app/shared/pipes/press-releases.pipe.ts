@@ -14,9 +14,16 @@ export class PressReleasesPipe implements PipeTransform {
     return releases.filter(release => {
       let matched = true;
       for (const filter of filterKeys) {
-        if (filters[filter] && release[filter] !== filters[filter]) {
-          matched = false;
-          break;
+        if (filters[filter]) {
+          if (typeof release[filter] !== 'string' && release[filter] !== filters[filter]) {
+            matched = false;
+            break;
+          }
+          if (typeof release[filter] === 'string' && typeof filters[filter] === 'string'
+            && release[filter].indexOf(filters[filter]) === -1) {
+            matched = false;
+            break;
+          }
         }
       }
       if (matched) {

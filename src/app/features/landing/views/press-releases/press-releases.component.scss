@@ -1,0 +1,11 @@
+@import "/src/styling/abstracts";
+section{
+  padding: rem(35px) 0 rem(75px);
+}
+.section-header{
+  .title{
+    font-size: rem(30px);
+    margin-bottom: rem(24px);
+    color:$primary;
+  }
+}

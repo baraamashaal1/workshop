@@ -8,8 +8,12 @@ import {SharedService} from '../../services/shared.service';
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent implements OnInit {
+  public loading = false;
+  public loadingPercentage = 0;
   public articles: Articles[];
   public categories: SourceCategory[];
+  public search = '';
+  public limitTo = 8;
   public months = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
@@ -27,11 +31,29 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sharedService.getPressReleases().subscribe((res: PressReleases) => {
-      this.articles = res.articles;
-      this.categories = res.sourceCategory;
-    });
+    this.getArticles();
   }
 
+  getArticles(): void {
+    if (this.loading) {
+      return;
+    }
+    this.loading = true;
+    const interval = setInterval(() => {
+      this.loadingPercentage = this.loadingPercentage + 10;
+    }, 50);
+    setTimeout(() => {
+      clearInterval(interval);
+      this.sharedService.getPressReleases().subscribe((res: PressReleases) => {
+        this.articles = res.articles.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+        this.categories = res.sourceCategory;
+        this.loading = false;
+        this.loadingPercentage = 0;
+      });
+    }, this.showFilters ? 1000 : 0);
+  }
 
+  loadMoreArticles(): void {
+    this.limitTo = this.limitTo + 4;
+  }
 }

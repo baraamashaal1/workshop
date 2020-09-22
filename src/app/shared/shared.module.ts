@@ -6,20 +6,23 @@ import {HttpClientModule} from '@angular/common/http';
 import {ArticlesComponent} from './components/articles/articles.component';
 import { PressReleasesPipe } from './pipes/press-releases.pipe';
 import { ShowOnScrollUpDirective } from './directives/show-on-scroll-up.directive';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   providers: [
     { provide: 'Window',  useValue: window }
   ],
-  declarations: [ArticlesComponent, PressReleasesPipe, ShowOnScrollUpDirective],
+  declarations: [ArticlesComponent, PressReleasesPipe, ShowOnScrollUpDirective, BreadcrumbComponent],
   imports: [
     CommonModule,
     NgbModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-    exports: [CommonModule, NgbModule, RouterModule, HttpClientModule, ArticlesComponent, ShowOnScrollUpDirective]
+  exports: [CommonModule, NgbModule, RouterModule, HttpClientModule, ArticlesComponent, ShowOnScrollUpDirective, BreadcrumbComponent]
 })
 export class SharedModule {
 }

@@ -1,6 +1,28 @@
-<div class="row no-gutters">
+<div *ngIf="showFilters" class="row filters">
+  <div class="form-group col-sm-5">
+    <select [(ngModel)]="category" class="form-control" id="category">
+      <option disabled [ngValue]="0" selected>category</option>
+      <option *ngFor="let category of categories"
+              [ngValue]="category.id">
+        {{category.name}}
+      </option>
+    </select>
+  </div>
+  <div class="form-group col-sm-7">
+    <div class="input-group mb-3">
+      <input [(ngModel)]="search" (keydown.enter)="getArticles()" type="text" class="form-control" placeholder="Title"
+             aria-label="Search" aria-describedby="Search" [disabled]="loading">
+      <div class="input-group-append">
+        <button class="btn btn-primary" (click)="getArticles()" type="button" [disabled]="loading">Search</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<p *ngIf="loading"><ngb-progressbar [value]="loadingPercentage"></ngb-progressbar></p>
+<div *ngIf="!loading" class="row" [class.no-gutters]="!showFilters">
   <div class="col-sm-6 col-md-4 col-xl-3"
-       *ngFor="let article of articles | pressReleases:{showOnHomepage: showOnHomepage,sourceID: category}">
+       *ngFor="let article of articles | pressReleases:{showOnHomepage: showOnHomepage,sourceID: category, title:search} | slice:0:limitTo;">
     <div class="card article-card bg-dark text-white"
          [style]="{'background-image':'url(\''+ article.urlToImage + '\')'}">
       <div class="card-img-overlay d-flex flex-column">
@@ -15,5 +37,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div *ngIf="showFilters && articles.length > limitTo" class="col-12">
+    <button (click)="loadMoreArticles()" id="articles-load-more-btn" class="btn w-100">load more</button>
   </div>
 </div>

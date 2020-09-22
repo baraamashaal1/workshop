@@ -1,5 +1,24 @@
 .input-group{
+  input{
+    //font-size: rem(20px);
+    line-height: 1;
+    font-family: 'Open Sans';
+  }
+  .input-group-append{
+    .btn-primary{
+      background-color: $light-primary;
+      border-color: $light-primary;
+    }
+  }
   .btn{
     height: $input-height;
   }
+}
+
+.form-control{
+  font-family: 'Open Sans';
+  text-transform: capitalize;
+}
+select.form-control{
+  padding: rem(9px) rem(24px);
 }

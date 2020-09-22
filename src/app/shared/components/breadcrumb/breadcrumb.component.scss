@@ -1,0 +1,35 @@
+@import "/src/styling/abstracts";
+
+:host{
+  display: block;
+  background-color: $light;
+  height: $nav-height;
+  margin-top: $nav-height;
+  width: 100%;
+  border-bottom: 1px solid rgba($dark-light,.5);
+}
+
+.breadcrumb{
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  line-height: $nav-height;
+  .breadcrumb-item{
+    font-size: rem(16px);
+    font-family: 'Calibri';
+    text-transform: capitalize;
+    color: $dark-light;
+    &:before{
+      display: none;
+    }
+    &.active, i{
+      color: $primary;
+    }
+    a{
+      color: inherit;
+    }
+    i{
+      margin-left: 5px;
+    }
+  }
+}

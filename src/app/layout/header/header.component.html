@@ -1,4 +1,5 @@
-<header>
+<header [class.show-breadcrumb]='data.length'>
   <link-logo linkShowOnScrollUp></link-logo>
   <link-menu linkShowOnScrollUp></link-menu>
+  <link-breadcrumb *ngIf="data.length" [data]="data"></link-breadcrumb>
 </header>

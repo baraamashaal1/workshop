@@ -9,13 +9,12 @@
   transition: background-color .2s;
   font-family: 'Segoe UI';
   border: 0;
-  margin:7.5px 0;
-  //margin-bottom: rem(15px);
+  margin:rem(7.5px) 0;
   &:hover{
     cursor:pointer;
   }
-  @include media-breakpoint-up(sm){
-    margin:0;
+  @include media-breakpoint-up(md){
+    margin:rem(15px) 0;
   }
   .card-title {
     margin-bottom: rem(17.5px);
@@ -62,4 +61,10 @@
       }
     }
   }
+}
+
+#articles-load-more-btn{
+  margin-top: rem(30px);
+  background-color: #707070;
+  color: $light-dark;
 }
