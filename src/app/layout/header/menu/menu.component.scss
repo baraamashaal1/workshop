@@ -11,7 +11,9 @@
   z-index: $zindex-fixed;
   transition: top .2s;
   &.scrolling-down{
-    top: 0;
+    @include media-breakpoint-down(sm){
+      top: 0;
+    }
   }
 }
 

@@ -6,12 +6,15 @@ import {Directive, ElementRef, HostListener, Inject, Renderer2} from '@angular/c
 export class ShowOnScrollUpDirective {
   private prevScroll: number;
   private curScroll: number;
-  private direction = 0;
-  private prevDirection = 0;
+  private direction: number;
+  private prevDirection: number;
 
   constructor(private el: ElementRef, @Inject('Window') private window: Window, private renderer2: Renderer2,
   ) {
     this.prevScroll = window.scrollY;
+    this.curScroll = window.scrollY;
+    this.direction = 0;
+    this.prevDirection = 0;
   }
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
