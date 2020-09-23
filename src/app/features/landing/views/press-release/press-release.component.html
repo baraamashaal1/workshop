@@ -1,0 +1,87 @@
+<section>
+  <div class="container-xl">
+    <div class="section-header">
+      <h2 class="title">
+        press release
+      </h2>
+    </div>
+    <div class="section-body">
+      <article *ngIf="article">
+        <div class="article-content">
+          <!--          <span class="article-image">-->
+          <img class="article-image" [src]="article.urlToImage" alt="">
+          <!--          </span>-->
+          <div class="article-content">
+            <p class="article-title">{{article.title}}</p>
+            <span class="article-date">{{article.publishedAt | date}}</span>
+            <p class="article-desc">{{article.content}}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="attachments-container">
+      <h2 class="title">
+        attachments
+      </h2>
+      <div class="attachments d-flex">
+        <a href="#" class="attachment">
+          <span class="attachment-title">Al_Jalilia_Foundation_1.pdf</span>
+          <span class="attachment-icon">
+              <i class="fa fa-arrow-down"></i>
+          </span>
+        </a>
+
+        <a href="#" class="attachment">
+          <span class="attachment-title">Al_Jalilia_Foundation_2.pdf</span>
+          <span class="attachment-icon">
+              <i class="fa fa-arrow-down"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="interesting-container">
+      <h2 class="title">
+        attachments
+      </h2>
+
+      <div class="all-interesting">
+        <div class="interesting interesting-0">
+          <div class="interesting-info">
+            <p class="info-title">About MRMI</p>
+            <p class="info-desc">Mohammed Bin Rashid Al Maktoum Global Initiatives was inaugurated on 4 October
+              2015. </p>
+            <span class="info-icon">
+                 <i class="fa fa-arrow-right"></i>
+               </span>
+          </div>
+        </div>
+
+        <div class="interesting interesting-1">
+          <div class="interesting-info">
+            <p class="info-title">About MRMI</p>
+            <p class="info-desc">Mohammed Bin Rashid Al Maktoum Global Initiatives was inaugurated on 4 October
+              2015. </p>
+            <span class="info-icon">
+                 <i class="fa fa-arrow-right"></i>
+               </span>
+          </div>
+        </div>
+
+        <div class="interesting interesting-2">
+          <div class="interesting-info">
+            <p class="info-title">About MRMI</p>
+            <p class="info-desc">Mohammed Bin Rashid Al Maktoum Global Initiatives was inaugurated on 4 October
+              2015. </p>
+            <span class="info-icon">
+                 <i class="fa fa-arrow-right"></i>
+               </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

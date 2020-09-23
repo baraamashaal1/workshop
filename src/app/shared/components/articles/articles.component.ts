@@ -49,6 +49,7 @@ export class ArticlesComponent implements OnInit {
         this.categories = res.sourceCategory;
         this.loading = false;
         this.loadingPercentage = 0;
+        this.limitTo = 8;
       });
     }, this.showFilters ? 1000 : 0);
   }

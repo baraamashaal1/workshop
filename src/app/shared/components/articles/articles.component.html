@@ -33,7 +33,7 @@
         </h5>
         <p class="card-text">{{ article.description }}</p>
         <div class="card-actions">
-          <button type="button" class="btn btn-action">read more</button>
+          <button type="button" [routerLink]="'/press-releases/'+ article.id" class="btn btn-action">read more</button>
         </div>
       </div>
     </div>

@@ -4,12 +4,13 @@ import {BannerComponent} from './components/banner/banner.component';
 import {SharedModule} from '../../shared/shared.module';
 import {OurProgramsComponent} from './components/our-programs/our-programs.component';
 import {SuccessStoryComponent} from './components/success-story/success-story.component';
-import { NewsComponent } from './components/news/news.component';
-import { PressReleasesComponent } from './views/press-releases/press-releases.component';
+import {NewsComponent} from './components/news/news.component';
+import {PressReleasesComponent} from './views/press-releases/press-releases.component';
+import {PressReleaseComponent} from './views/press-release/press-release.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, BannerComponent, OurProgramsComponent, SuccessStoryComponent, NewsComponent, PressReleasesComponent],
+  declarations: [HomeComponent, BannerComponent, OurProgramsComponent, SuccessStoryComponent, NewsComponent, PressReleasesComponent, PressReleaseComponent],
   imports: [
     SharedModule
 
